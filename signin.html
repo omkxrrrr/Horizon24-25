@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline CSS for Form Container */
+        .form-container {
+            width: fit-content;
+            max-width: 400px;
+            background-color: rgba(79, 75, 75, 0.2);
+            backdrop-filter: blur(1.5px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: auto; /* Horizontally centers the form */
+            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+        }
+
+        /* Form Input Fields */
+        .form-container input[type="email"],
+        .form-container input[type="password"],
+        .form-container input[type="text"],
+        .form-container button {
+            width: 90%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: none;
+            background-color: #E2E8F0;
+            color: #000000;
+            font-size: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Button Styling */
+        .form-container button {
+            background-color: #FFD700;
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-container button:hover {
+            background-color: #E2E8F0;
+        }
+
+        /* Form Labels */
+        .form-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        /* Error Message Styling */
+        .error-message {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        /* Link Styling */
+        .form-container a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0;
+        }
+
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+        }
+
+        /* Main Content Wrapper */
+        main {
+            flex: 1; /* Allows main content to grow and take up available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px; /* Adjust for header/footer height */
+            width: 100%;
+            padding-bottom: 20px; /* Prevents content from touching the footer */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: rgba(45, 55, 72, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed; /* Ensures footer stays at the bottom of the viewport */
+            bottom: 0;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+        <source src="4k.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2021/05/08/73478-548608753_large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Horizon 24-25</h1>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+            </nav>
+            <button class="sign-in-button" onclick="location.href='signup.html'">Sign Up</button>
+        </div>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+    </div>
+
+    <main>
+        <div class="form-container">
+            <form id="signinForm" action="signin.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" >
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" >
+                
+                <button type="submit">Sign In</button>
+                
+                <p>Don't have an account?<a href="signup.html">Sign Up</a></p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Connect with us on Instagram: @horizonfest</p>
+    </footer>
+
+    <script>
+        document.getElementById('signinForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Process the form (e.g., with AJAX) then redirect
+            // Example: redirecting after form is processed
+            window.location.href = 'index.html';
+        });
+    </script>
+
+</body>
+</html>
