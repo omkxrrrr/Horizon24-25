@@ -20,13 +20,36 @@
             .section-left, .section-right {
                 width: 100%; /* Ensure both sections take up full width */
                 text-align: center;
-                margin-bottom: 1rem; /* Add spacing between stacked sections */
+                margin: 0 auto 1rem auto; /* Center-align sections */
+                padding: 0; /* Remove padding */
             }
 
             div{
                 align-items: center;
+                justify-content: center; /* Center content horizontally */
+                align-items: center; /* Center content vertically */
                 
             }
+
+            /* Countdown alignment for mobile */
+            .countdown-container {
+                width: 90%; /* Adjust width to fit the screen */
+                padding: 10px; /* Reduce padding for mobile */
+                margin: 0 auto; /* Center the container horizontally */
+                flex-direction: row; /* Keep the time elements in one row */
+                justify-content: space-between; /* Adjust spacing */
+                text-align: center; /* Center text inside the container */
+            }
+
+            .time {
+                font-size: 1.5rem; /* Reduce the font size for mobile */
+            }
+
+            .time div {
+                font-size: 0.8rem; /* Reduce the label size */
+                margin-top: 3px; /* Adjust spacing */
+            }
+
         }
 
         /* For Laptop Layout */
@@ -80,7 +103,7 @@
         <h1>Horizon 24-25</h1>
         <div class="nav-container">
             <nav>
-                <a href="index.html">Home</a>
+                <a href="home.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="events.html">Events</a>
             </nav>
@@ -91,7 +114,7 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
+        <a href="home.html">Home</a>
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
     </div>
@@ -99,26 +122,27 @@
     <main>
         <!-- Section 1: Logo and Info -->
         <div style="margin-bottom: 2rem;" id="main"> <!-- Added margin-bottom to create space -->
-            <img src="horizon logo WHITE.png" alt="College Logo" 
+            <img src="C:\Users\DELL\Desktop\Horizon\horizon logo WHITE.png" alt="College Logo" 
                 style="width: 150px; height: auto; display: block; margin: 0 auto;
                         filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 20px #ffffff)">
+            <p style="color: white;">About Horizon Fest.</p>
         </div>
         
             <div class="countdown-container">
                 <div class="time">
-                    <span id="days">..</span>
+                    <span id="days">00</span>
                     <div>Days</div>
                 </div>
                 <div class="time">
-                    <span id="hours">..</span>
+                    <span id="hours">00</span>
                     <div>Hours</div>
                 </div>
                 <div class="time">
-                    <span id="minutes">..</span>
+                    <span id="minutes">00</span>
                     <div>Minutes</div>
                 </div>
                 <div class="time">
-                    <span id="seconds">..</span>
+                    <span id="seconds">00</span>
                     <div>Seconds</div>
                 </div>
             </div>
@@ -130,7 +154,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur.</p>
             </section>
             <section class="section-right">
-                <img src="college logo.png" alt="College Logo" style="width: 50%; height: 50%; border-radius: 10px;">
+                <img src="C:\Users\DELL\Desktop\Horizon\college logo.png" alt="College Logo" style="width: 50%; height: 50%; border-radius: 10px;">
                 <img src="college-picture.jpg" alt="College Picture" style="width: 100%; height: auto; border-radius: 10px; margin-top: 20px;">
             </section>
         </div>
