@@ -1,0 +1,178 @@
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Ensure the video is behind the content */
+    object-fit: cover; /* Ensure the video covers the entire background */
+}
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Fallback Background Color */
+    color: #E2E8F0; /* Text Color */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(79, 75, 75, 0.2);
+    backdrop-filter: blur(1.5px);
+    color: #ffffff;
+    padding: 2rem 0;
+    padding-left: 30px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+div a {
+    color: #E2E8F0;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* Navigation Links */
+nav a, button {
+    color: #E2E8F0;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 10px 20px; /* Adjusted padding */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+/* Sign In Button */
+.sign-in-button {
+    padding: 8px 16px;
+    background-color: #FFD700;
+    color: #000000;
+    border-radius: 5px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sign-in-button:hover {
+    background-color: #E2E8F0;
+    color: #000000;
+}
+
+/* Mobile Menu Styles */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(79, 75, 75, 0.8);
+    padding: 10px;
+    position: fixed; /* Changed from absolute to fixed */
+    top: 70px; /* Adjusted position to stick below the header */
+    right: 20px;
+    z-index: 1001;
+    border-radius: 5px;
+}
+
+/* Additional Styles for Mobile Menu */
+.mobile-menu a {
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Smaller font size for mobile screens */
+    }
+
+    .sign-in-button {
+        padding: 6px 12px; /* Adjust padding to fit the text on one line */
+        font-size: 0.8rem; /* Smaller font size for mobile screens */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* Sticky Mobile Menu */
+    .mobile-menu {
+        position: fixed; /* Ensure the mobile menu stays fixed when scrolling */
+        top: 70px; /* Adjust top position if needed to match header height */
+        right: 20px;
+    }
+
+    /* Mobile-specific styling for footer */
+    footer {
+        text-align: center;
+    }
+}
+
+/* For Laptop Layout */
+@media (min-width: 769px) {
+    .nav-container {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    nav a, .sign-in-button {
+        margin-left: 20px; /* Add spacing between links and button */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(45, 55, 72, 0.2);
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}

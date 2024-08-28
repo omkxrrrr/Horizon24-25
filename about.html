@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon 2024-25</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Main Content Styles */
+        main {
+            padding: 2rem;
+            text-align: center;
+            position: relative; /* Ensure content is above the video */
+            z-index: 1;
+        }
+
+        /* Section Layout Styles */
+        section {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Split section into 2 equal columns */
+            gap: 1rem;
+        }
+
+        .left, .right {
+            display: grid;
+            grid-template-rows: 1fr ; /* Each side has 2 rows */
+            gap: 1rem;
+            background-color: rgba(45, 55, 72, 0.2); /* Semi-transparent background */
+            padding: 2rem;
+        }
+
+        .block {
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            section {
+                grid-template-columns: 1fr;
+            }
+            .left, .right {
+                grid-template-rows: 1fr;
+                padding: 1rem;
+            }
+            .block {
+                font-size: 1rem; /* Adjust font size for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+        <source src="4k.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2021/05/08/73478-548608753_large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Horizon 24-25</h1>
+        <div class="nav-container">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+            </nav>
+            <button class="sign-in-button" onclick="location.href='signin.html'">Sign In</button>
+        </div>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+    </div>
+    
+    <main>
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="left">
+                <div class="block">Left Block</div>
+            </div>
+            <div class="right">
+                <div class="block">Right Block</div>
+            </div>
+        </section>
+
+        <!-- Additional Sections -->
+    </main>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>

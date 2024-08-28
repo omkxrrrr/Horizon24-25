@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Horizon 24-25</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        /* Main Content Styles */
+        main {
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            background-color: rgba(79, 75, 75, 0.1);
+            backdrop-filter: blur(1.5px);            
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-info {
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        .event-photo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .event-photo img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .event-info, .event-photo {
+                margin: 0;
+            }
+            .event-photo {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+        <source src="4k.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2021/05/08/73478-548608753_large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Horizon 24-25</h1>
+        <div class="nav-container">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+            </nav>
+            <button class="sign-in-button" onclick="location.href='signin.html'">Sign In</button>
+        </div>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+    </div>
+    
+    <main>
+        <!-- Event Sections -->
+        <section>
+            <div class="event-info">
+                <h2>Event Name 1</h2>
+                <p>Short description of Event 1.</p>
+            </div>
+            <div class="event-photo">
+                <img src="event1.jpg" alt="Event 1">
+            </div>
+        </section>
+
+        <section>
+            <div class="event-info">
+                <h2>Event Name 2</h2>
+                <p>Short description of Event 2.</p>
+            </div>
+            <div class="event-photo">
+                <img src="event2.jpg" alt="Event 2">
+            </div>
+        </section>
+
+        <!-- Repeat sections for more events -->
+        <!-- Add more event sections as needed, e.g., Event 3 to Event 15 -->
+
+        <section>
+            <div class="event-info">
+                <h2>Event Name 3</h2>
+                <p>Short description of Event 3.</p>
+            </div>
+            <div class="event-photo">
+                <img src="event3.jpg" alt="Event 3">
+            </div>
+        </section>
+
+        <!-- Continue adding event sections up to Event 15 -->
+    </main>
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
