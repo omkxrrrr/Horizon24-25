@@ -1,11 +1,17 @@
-/* Base Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Ensure html and body take up the full height of the viewport */
+ body {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     background-color: #000000; /* Fallback Background Color */
     color: #E2E8F0; /* Text Color */
     overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Main content should grow to fill available space */
+.content {
+    flex: 1;
 }
 
 /* Video Background */
@@ -171,8 +177,10 @@ footer {
     padding: 20px;
     text-align: center;
     width: 100%;
+    position: relative;
     bottom: 0;
     left: 0;
+    margin-top: auto; /* Ensure footer stays at the bottom */
 }
 
 footer p {
