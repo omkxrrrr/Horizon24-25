@@ -34,3 +34,15 @@ function updateCountdown() {
 
 // Update the countdown every second
 setInterval(updateCountdown, 1000);
+
+document.addEventListener('touchmove', function(event) {
+    // Your code here
+}, { passive: true });
+
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    loader.classList.add('fade-out'); // Add fade-out class if needed
+    setTimeout(function() {
+        loader.style.display = 'none'; // Hide the loader
+    }, 500); // Match this with your animation duration
+});
