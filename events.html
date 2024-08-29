@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - Horizon 2024</title>
+    <title>Events - Horizon 24-25</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        
-        /* Main Content Styles */
-        main {
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        section {
-            background-color: rgba(79, 75, 75, 0.1);
-            backdrop-filter: blur(1.5px);            
-            padding: 1rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .event-info {
-            flex: 1;
-            margin-right: 1rem;
-        }
-
-        .event-photo {
-            flex: 1;
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 10vh;
         }
 
-        .event-photo img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 8px;
+        .events {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .event {
+            background-color: rgba(79, 75, 75, 0.2);
+            backdrop-filter: blur(1.5px);
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(100% - 20%); /* Width is 20% less than height */
+            max-width: 200px; /* Adjust maximum width */
+            height: 250px; /* Set a specific height */
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+            margin: 20px auto; /* Center the card horizontally */
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
+            color: white; /* Text color */
+            transition: transform 0.3s ease; /* Optional: Add a slight hover effect */
+        }
+
+        .event:hover {
+            transform: scale(1.05); /* Slightly enlarge the card on hover */
+        }
+
+        .event h2 {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .event p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .event i {
+            font-size: 48px;
+            margin-bottom: 10px;
+            border: #fff;
+        }
+
+        .notation {
+            text-align: center;
+            /* Centers the text horizontally */
+            margin: 20px auto;
+            /* Centers the div itself horizontally */
+            font-size: 2em;
+            font-weight: bold;
         }
 
         /* Responsive Design */
@@ -49,15 +78,19 @@
                 flex-direction: column;
                 text-align: center;
             }
-            .event-info, .event-photo {
+
+            .event-info,
+            .event-photo {
                 margin: 0;
             }
+
             .event-photo {
                 margin-top: 1rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Video Background -->
     <video autoplay muted loop class="video-background">
@@ -67,7 +100,7 @@
     </video>
 
     <header>
-        <h1>Horizon 2024</h1>
+        <h1>Horizon 24-25</h1>
         <div class="nav-container">
             <nav>
                 <a href="index.html">Home</a>
@@ -85,46 +118,137 @@
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
     </div>
-    
+
     <main>
-        <!-- Event Sections -->
         <section>
-            <div class="event-info">
-                <h2>Event Name 1</h2>
-                <p>Short description of Event 1.</p>
+            <div class="notation">
+                <h2>Technical Events</h2>
             </div>
-            <div class="event-photo">
-                <img src="event1.jpg" alt="Event 1">
+            <div class="container">
+                <div class="events">
+
+                    <div class="event">
+                        <h2>HACKATHON</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>EXIBITION</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>SCRIBBLE</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>DEBUG RACE</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>ESCAPE ROOM</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>KEY RUSH</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>SAT</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>QUIZ</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="event-info">
-                <h2>Event Name 2</h2>
-                <p>Short description of Event 2.</p>
-            </div>
-            <div class="event-photo">
-                <img src="event2.jpg" alt="Event 2">
-            </div>
-        </section>
-
-        <!-- Repeat sections for more events -->
-        <!-- Add more event sections as needed, e.g., Event 3 to Event 15 -->
 
         <section>
-            <div class="event-info">
-                <h2>Event Name 3</h2>
-                <p>Short description of Event 3.</p>
+            <div class="notation">
+                <h2>Non-Technical Events</h2>
             </div>
-            <div class="event-photo">
-                <img src="event3.jpg" alt="Event 3">
+            <div class="container">
+                <div class="events">
+
+                    <div class="event">
+                        <h2>REEL MAKING</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>MEME MAKING</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>PHOTO STORY</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>BRAIN TEASER BONANZA</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>SPELL BEE</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>Just A Minute(JAM)</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>DEBATE</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                    <div class="event">
+                        <h2>TIC-TAC-TOE</h2>
+                        <p>DESCRIPTION</p>
+                        <button class="button">Learn More</button>
+                        <button class="button">Register</button>
+                    </div>
+                </div>
             </div>
         </section>
-
         <!-- Continue adding event sections up to Event 15 -->
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Connect with us on Instagram: <a href="https://www.instagram.com/horizonfestkirti?igsh=MThtZWlkcnZhZXRqOQ==">@horizonfest</a></p>
+    </footer>
+    
     <script src="script.js">
-        
+
     </script>
 </body>
+
 </html>
