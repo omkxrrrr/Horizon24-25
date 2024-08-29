@@ -160,6 +160,9 @@
         <p>Connect with us on Instagram: @horizonfest</p>
     </footer>
 
+    <!-- Loader Element -->
+    <div id="loader" class="loader"></div>
+
     <script>
         document.getElementById('signinForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
@@ -167,6 +170,19 @@
             // Example: redirecting after form is processed
             window.location.href = 'index.html';
         });
+
+        document.getElementById('signinForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Show the loader
+            document.getElementById('loader').style.display = 'flex';
+            
+            // Simulate form submission delay (e.g., with AJAX)
+            setTimeout(function() {
+                window.location.href = 'home.html'; // Redirect to the home page
+            }, 8000); // Adjust this timeout as needed
+        });
+
     </script>
 
 </body>
