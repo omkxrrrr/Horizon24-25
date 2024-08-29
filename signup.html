@@ -105,6 +105,30 @@
             bottom: 0;
             left: 0;
         }
+
+        @media (max-width: 768px) {
+            /* Adjust form container for mobile */
+            .form-container {
+                width: 80%; /* Makes the form take up most of the screen width */
+                padding: 1rem; /* Reduces padding for smaller screens */
+                margin-top: 30px; /* Adjusts margin from top */
+            }
+
+            /* Adjust input fields for mobile */
+            .form-container input[type="email"],
+            .form-container input[type="password"],
+            .form-container input[type="text"],
+            .form-container button {
+                width: 90%; /* Make input fields and button stretch to full width */
+                padding: 0.6rem; /* Reduce padding for smaller screens */
+                font-size: 0.9rem; /* Slightly reduce font size */
+            }
+
+            /* Adjust the button hover effect */
+            .form-container button:hover {
+                background-color: #FFD700; /* Maintain hover color consistency */
+            }
+        }
     </style>
 </head>
 <body>
