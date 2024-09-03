@@ -16,11 +16,11 @@
 
         .events {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
-            justify-content: center; /* Centers the entire grid horizontally */
-            justify-items: center; /* Centers each item within its grid cell */
+            justify-content: center;
+            justify-items: center;
             width: 100%;
             box-sizing: border-box;
         }
@@ -30,24 +30,23 @@
             backdrop-filter: blur(1.5px);
             border-radius: 10px;
             padding: 20px;
-            width: calc(100% - 20%); /* Width is 20% less than height */
-            max-width: 200px; /* Adjust maximum width */
-            height: 250px; /* Set a specific height */
+            width: calc(100% - 20%);
+            max-width: 200px;
+            height: 250px;
             text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
-            margin: 20px auto; /* Center the card horizontally */
-            display: flex; /* Enable flexbox */
-            flex-direction: column; /* Stack items vertically */
-            justify-content: center; /* Center items vertically */
-            align-items: center; /* Center items horizontally */
-            color: white; /* Text color */
-            transition: transform 0.3s ease; /* Optional: Add a slight hover effect */
-            cursor: pointer; /* Indicate that the card is clickable */
-            height: fit-content;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            transition: transform 0.3s ease;
+            cursor: pointer;
         }
-  
+
         .event:hover {
-            transform: scale(1.05); /* Slightly enlarge the card on hover */
+            transform: scale(1.05);
         }
 
         .event h2 {
@@ -70,9 +69,7 @@
 
         .notation {
             text-align: center;
-            /* Centers the text horizontally */
             margin: 20px auto;
-            /* Centers the div itself horizontally */
             font-size: 2em;
             font-weight: bold;
         }
@@ -100,7 +97,7 @@
 
         /* Modal styles */
         .modal {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -108,33 +105,89 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
-            backdrop-filter: blur(5px); /* Blur effect for background */
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .modal-content {
+            display: flex;
             background-color: rgba(79, 75, 75, 0.2);
-            margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
+            max-width: 800px;
             border-radius: 10px;
-            text-align: center;
+            text-align: left;
+            flex-direction: row;
         }
 
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
+        .modal-content img {
+            max-width: 40%;
+            border-radius: 10px;
+            margin-right: 20px;
         }
 
-        .close-button:hover,
-        .close-button:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
+        .modal-content .info {
+            width: 60%;
+        }
+
+        /* Chat style */
+        .chat {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+        }
+
+        .message.sender {
+            justify-content: flex-start;
+        }
+
+        .message.receiver {
+            justify-content: flex-end;
+        }
+
+        .message span {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .sender span {
+            background-color: #4CAF50;
+            color: white;
+            border-bottom-left-radius: 0;
+        }
+
+        .receiver span {
+            background-color: #2196F3;
+            color: white;
+            border-bottom-right-radius: 0;
+        }
+
+        .info h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .info ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .info ul li {
+            margin-bottom: 10px;
+        }
+
+        .no-scroll {
+            overflow: hidden;
         }
     </style>
 </head>
@@ -174,38 +227,106 @@
             </div>
             <div class="container">
                 <div class="events">
-                    <div class="event" data-title="HACKATHON" data-description="Details about Hackathon">
+
+
+
+                    <div class="event" 
+                        data-title="HACKATHON" 
+                        data-description="Join us for an intense coding session where creativity meets technology." 
+                        data-image="WhatsApp Image 2024-09-03 at 19.42.31_58585f21.jpg"
+                        data-dates="Registration Deadline: 20th Sept, Event Dates: 25th-28th Sept"
+                        data-rules="1. Teams of 4, 2. 24-hour coding challenge, 3. No outside help">
                         <h2>HACKATHON</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event" data-title="EXIBITION" data-description="Details about Exhibition">
-                        <h2>EXIBITION</h2>
+
+
+
+                    
+                    <div class="event" 
+                        data-title="EXHIBITION" 
+                        data-description="Explore innovative projects and designs from top minds."
+                        data-image="exhibition.jpg"
+                        data-dates="Registration Deadline: 18th Sept, Event Dates: 23rd-25th Sept"
+                        data-rules="1. Projects must be original, 2. Teams of up to 5, 3. Presentations are limited to 10 minutes">
+                        <h2>EXHIBITION</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event" data-title="SCRIBBLE" data-description="Details about Scribble">
-                        <h2>SCRIBBLE</h2>
+
+
+
+                    <div class="event" 
+                        data-title="SCRIBLE" 
+                        data-description="Explore innovative projects and designs from top minds."
+                        data-image="SCRIBLE.jpg"
+                        data-dates="Registration Deadline: 18th Sept, Event Dates: 23rd-25th Sept"
+                        data-rules="1. Projects must be original, 2. Teams of up to 5, 3. Presentations are limited to 10 minutes">
+                        <h2>SCRIBLE</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event" data-title="DEBUG RACE" data-description="Details about Debug Race">
+
+
+
+                    <div class="event" 
+                        data-title="DEBUG RACE" 
+                        data-description="Explore innovative projects and designs from top minds."
+                        data-image="DEBUG RACE.jpg"
+                        data-dates="Registration Deadline: 18th Sept, Event Dates: 23rd-25th Sept"
+                        data-rules="1. Projects must be original, 2. Teams of up to 5, 3. Presentations are limited to 10 minutes">
                         <h2>DEBUG RACE</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event" data-title="ESCAPE ROOM" data-description="Details about Escape Room">
+
+
+
+                    <div class="event" 
+                        data-title="ESCAPE ROOM" 
+                        data-description="Explore innovative projects and designs from top minds."
+                        data-image="ESCAPE ROOM.jpg"
+                        data-dates="Registration Deadline: 18th Sept, Event Dates: 23rd-25th Sept"
+                        data-rules="1. Projects must be original, 2. Teams of up to 5, 3. Presentations are limited to 10 minutes">
                         <h2>ESCAPE ROOM</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event" data-title="KEY RUSH" data-description="Details about Key Rush">
+
+
+
+                    <div class="event" 
+                        data-title="KEY RUSH" 
+                        data-description="Explore innovative projects and designs from top minds."
+                        data-image="KEY RUSH.jpg"
+                        data-dates="Registration Deadline: 18th Sept, Event Dates: 23rd-25th Sept"
+                        data-rules="1. Projects must be original, 2. Teams of up to 5, 3. Presentations are limited to 10 minutes">
                         <h2>KEY RUSH</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event" data-title="SRT" data-description="Details about SRT">
-                        <h2>SRT</h2>
+
+
+
+                    <div class="event" 
+                        data-title="SRT" 
+                        data-description="Explore innovative projects and designs from top minds."
+                        data-image="SRT.jpg"
+                        data-dates="Registration Deadline: 18th Sept, Event Dates: 23rd-25th Sept"
+                        data-rules="1. Projects must be original, 2. Teams of up to 5, 3. Presentations are limited to 10 minutes">
+                        <h2>SITUATION REACTION TEST (SRT)</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event" data-title="QUIZ" data-description="Details about Quiz">
+
+
+
+                    <div class="event" 
+                        data-title="QUIZ" 
+                        data-description="Explore innovative projects and designs from top minds."
+                        data-image="QUIZ.jpg"
+                        data-dates="Registration Deadline: 18th Sept, Event Dates: 23rd-25th Sept"
+                        data-rules="1. Projects must be original, 2. Teams of up to 5, 3. Presentations are limited to 10 minutes">
                         <h2>QUIZ</h2>
                         <button class="button">Register</button>
                     </div>
+
+
+
                 </div>
             </div>
         </section>
@@ -260,38 +381,71 @@
     </footer>
     
     <!-- Popup Modal -->
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" style="display: none;">
         <div class="modal-content">
-            <span class="close-button" onclick="closeModal()">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <button class="button">Register</button>
+            <img id="modal-image" src="WhatsApp Image 2024-09-03 at 19.42.31_58585f21.jpg" alt="Event Image">
+            <div class="info">
+                <h2 id="modal-title"></h2>
+                <div id="modal-chat" class="chat">
+                    <!-- Chat messages will be inserted here -->
+                </div>
+                
+                <ul id="modal-info">
+                    <!-- Dates will be inserted here -->
+                </ul>
+                
+            </div>
         </div>
     </div>
 
     <script>
         // JavaScript to handle the modal popup
         document.addEventListener('DOMContentLoaded', () => {
-            const events = document.querySelectorAll('.event');
-            const modal = document.getElementById('modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDescription = document.getElementById('modal-description');
+        const events = document.querySelectorAll('.event');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalChat = document.getElementById('modal-chat');
+        const modalDates = document.getElementById('modal-info');
 
-            events.forEach(event => {
-                event.addEventListener('click', () => {
-                    // Set modal content based on clicked event
-                    modalTitle.textContent = event.getAttribute('data-title');
-                    modalDescription.textContent = event.getAttribute('data-description');
-                    // Show modal
-                    modal.style.display = 'block';
-                });
+        events.forEach(event => {
+            event.addEventListener('click', () => {
+                // Set modal content based on clicked event
+                modalTitle.textContent = event.getAttribute('data-title');
+                modalImage.src = event.getAttribute('data-image');
+
+                // Replace with actual chat messages if applicable
+                modalChat.innerHTML = `
+                    <div class="message sender">
+                        <span>Can you provide more details about ${event.getAttribute('data-title')}?</span>
+                    </div>
+                    <div class="message receiver">
+                        <span>Sure! ${event.getAttribute('data-description')}</span>
+                    </div>
+                `;
+
+                // Update dates and rules
+                modalDates.innerHTML = `
+                    <h3>Important Dates:</h3>
+                    <li>${event.getAttribute('data-dates')}</li>
+                    <h3>Rules:</h3>
+                    <li>${event.getAttribute('data-rules').split(', ').join('</li><li>')}</li>
+                `;
+
+                // Show modal
+                modal.style.display = 'flex';
+                document.body.classList.add('no-scroll');
             });
         });
 
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
+        // Close the modal if clicked outside the content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.classList.remove('no-scroll'); // Re-enable scroll
+            }
+        });
+    });
     </script>
 </body>
-
 </html>
