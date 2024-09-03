@@ -74,27 +74,6 @@
             font-weight: bold;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .event-info,
-            .event-photo {
-                margin: 0;
-            }
-
-            .event-photo {
-                margin-top: 1rem;
-            }
-
-            .events {
-                grid-template-columns: 2fr; /* Single column for smaller screens */
-            }
-        }
-
         /* Modal styles */
         .modal {
             display: none;
@@ -188,6 +167,62 @@
 
         .no-scroll {
             overflow: hidden;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event-info,
+            .event-photo {
+                margin: 0;
+            }
+
+            .event-photo {
+                margin-top: 1rem;
+            }
+
+            .events {
+                grid-template-columns: 2fr; /* Single column for smaller screens */
+            }
+
+            .modal-content {
+                flex-direction: column;  /* Stack content vertically */
+                padding: 15px;
+                max-width: 80%;  /* Adjust width for smaller screens */
+                max-height: 75%;  /* Adjust height for smaller screens */
+                overflow-y: auto;  /* Allow scrolling within the modal */
+            }
+
+            .modal-content img {
+                max-width: 100%;  /* Make image full width */
+                margin: 0 0 15px 0;  /* Adjust margins */
+                max-height: 250px;  /* Limit height of the image on smaller screens */
+            }
+
+            .modal-content .info {
+                width: 100%;  /* Make info section full width */
+            }
+
+            .modal-content h2 {
+                font-size: 20px;  /* Adjust heading size */
+            }
+
+            .info h3 {
+                font-size: 16px;  /* Adjust subheading size */
+            }
+
+            .info ul li {
+                font-size: 14px;  /* Adjust list font size */
+            }
+
+            .chat .message span {
+                font-size: 14px;  /* Adjust chat message size */
+                max-width: 90%;  /* Allow chat messages to take more width */
+            }
         }
     </style>
 </head>
