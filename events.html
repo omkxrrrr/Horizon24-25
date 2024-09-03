@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - Horizon 24-25</title>
+    <title>Events - Horizon 2024</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         .container {
@@ -15,11 +15,14 @@
         }
 
         .events {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
             gap: 20px;
             padding: 20px;
+            justify-content: center; /* Centers the entire grid horizontally */
+            justify-items: center; /* Centers each item within its grid cell */
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .event {
@@ -39,8 +42,10 @@
             align-items: center; /* Center items horizontally */
             color: white; /* Text color */
             transition: transform 0.3s ease; /* Optional: Add a slight hover effect */
+            cursor: pointer; /* Indicate that the card is clickable */
+            height: fit-content;
         }
-
+  
         .event:hover {
             transform: scale(1.05); /* Slightly enlarge the card on hover */
         }
@@ -62,28 +67,6 @@
             margin-bottom: 10px;
             border: #fff;
         }
-
-        .button {
-            background-color: #FFD700;
-            border: none;
-            color: #fff;
-            padding: 10px 20px;
-            width: 70%;
-            height: 40px;
-            text-align: center;
-            -webkit-text-fill-color: black;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 2px 2px;
-            cursor: pointer;
-            border-radius: 5px;           
-        }
-        
-        .button:hover {
-            opacity: 0.8;
-        }
-
 
         .notation {
             text-align: center;
@@ -109,6 +92,49 @@
             .event-photo {
                 margin-top: 1rem;
             }
+
+            .events {
+                grid-template-columns: 2fr; /* Single column for smaller screens */
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
+            backdrop-filter: blur(5px); /* Blur effect for background */
+        }
+
+        .modal-content {
+            background-color: rgba(79, 75, 75, 0.2);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -148,59 +174,41 @@
             </div>
             <div class="container">
                 <div class="events">
-
-                    <div class="event">
+                    <div class="event" data-title="HACKATHON" data-description="Details about Hackathon">
                         <h2>HACKATHON</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="EXIBITION" data-description="Details about Exhibition">
                         <h2>EXIBITION</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="SCRIBBLE" data-description="Details about Scribble">
                         <h2>SCRIBBLE</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="DEBUG RACE" data-description="Details about Debug Race">
                         <h2>DEBUG RACE</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="ESCAPE ROOM" data-description="Details about Escape Room">
                         <h2>ESCAPE ROOM</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="KEY RUSH" data-description="Details about Key Rush">
                         <h2>KEY RUSH</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
-                        <h2>SAT</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
+                    <div class="event" data-title="SRT" data-description="Details about SRT">
+                        <h2>SRT</h2>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="QUIZ" data-description="Details about Quiz">
                         <h2>QUIZ</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <section>
             <div class="notation">
@@ -208,53 +216,36 @@
             </div>
             <div class="container">
                 <div class="events">
-
-                    <div class="event">
+                    <div class="event" data-title="REEL MAKING" data-description="Details about Reel Making">
                         <h2>REEL MAKING</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="MEME MAKING" data-description="Details about Meme Making">
                         <h2>MEME MAKING</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="PHOTO STORY" data-description="Details about Photo Story">
                         <h2>PHOTO STORY</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="BRAIN TEASER BONANZA" data-description="Details about Brain Teaser Bonanza">
                         <h2>BRAIN TEASER BONANZA</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="SPELL BEE" data-description="Details about Spell Bee">
                         <h2>SPELL BEE</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="Just A Minute(JAM)" data-description="Details about Just A Minute (JAM)">
                         <h2>Just A Minute(JAM)</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="DEBATE" data-description="Details about Debate">
                         <h2>DEBATE</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
-                    <div class="event">
+                    <div class="event" data-title="TIC-TAC-TOE" data-description="Details about Tic-Tac-Toe">
                         <h2>TIC-TAC-TOE</h2>
-                        <p>DESCRIPTION</p>
-                        <button class="button">Learn More</button>
                         <button class="button">Register</button>
                     </div>
                 </div>
@@ -265,11 +256,41 @@
 
     <!-- Footer -->
     <footer>
-        <p>Connect with us on Instagram: <a href="https://www.instagram.com/horizonfestkirti?igsh=MThtZWlkcnZhZXRqOQ==">@horizonfest</a></p>
+        <p>Connect with us on Instagram: <a style="text-decoration: none;" href="https://www.instagram.com/horizonfestkirti?igsh=MThtZWlkcnZhZXRqOQ==">@horizonfest</a></p>
     </footer>
     
-    <script src="script.js">
+    <!-- Popup Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <button class="button">Register</button>
+        </div>
+    </div>
 
+    <script>
+        // JavaScript to handle the modal popup
+        document.addEventListener('DOMContentLoaded', () => {
+            const events = document.querySelectorAll('.event');
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+
+            events.forEach(event => {
+                event.addEventListener('click', () => {
+                    // Set modal content based on clicked event
+                    modalTitle.textContent = event.getAttribute('data-title');
+                    modalDescription.textContent = event.getAttribute('data-description');
+                    // Show modal
+                    modal.style.display = 'block';
+                });
+            });
+        });
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
     </script>
 </body>
 
