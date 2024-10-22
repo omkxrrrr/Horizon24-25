@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizon 2024-25</title>
+    <title>Horizon 2024</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="count.css">
     <style>
@@ -11,7 +11,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
     
-             /* Stack sections vertically on mobile */
+            /* Stack sections vertically on mobile */
             .section-wrapper {
                 display: block; /* Change from flex to block to stack sections */
                 margin-bottom: 2rem;
@@ -33,22 +33,48 @@
 
             /* Countdown alignment for mobile */
             .countdown-container {
-                width: 90%; /* Adjust width to fit the screen */
-                padding: 10px; /* Reduce padding for mobile */
-                margin: 0 auto; /* Center the container horizontally */
-                flex-direction: row; /* Keep the time elements in one row */
-                justify-content: space-between; /* Adjust spacing */
-                text-align: center; /* Center text inside the container */
-                margin-bottom: 2rem;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 10px;
             }
 
             .time {
-                font-size: 1.5rem; /* Reduce the font size for mobile */
+                font-size: 24px; /* Default size for larger screens */
+                padding: 10px;
+                text-align: center;
             }
 
             .time div {
                 font-size: 0.8rem; /* Reduce the label size */
                 margin-top: 3px; /* Adjust spacing */
+            }
+
+            #main img {
+                max-width: 70%; /* Reduce the size of the logo */
+            }
+
+            .countdown-container {
+                padding: 5px; /* Reduce padding around the container */
+            }
+
+            .time {
+                font-size: 20px; /* Reduce font size for time elements */
+                padding: 5px; /* Reduce padding for time elements */
+            }
+
+            .moblay {
+                width: 90%;
+                padding: 20px; /* Adjust padding for mobile */
+            }
+
+            #main.horizon {
+                font-size: small !important; /* Force smaller font size on mobile */
+            }
+
+            #main h1 {
+                font-size: 1.7rem !important; /* Override the larger font size for mobile */
+                letter-spacing: normal; /* Adjust letter spacing for smaller screens */
             }
 
         }
@@ -72,8 +98,27 @@
         #main{
             background-color: rgba(79, 75, 75, 0.1);
             backdrop-filter: blur(1.5px);
-            padding: 50px;
+            padding: 20px;
             border-radius: 10px;
+        }
+
+        #main img {
+            width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 10px #ffffff);
+        }
+
+        #main h1 {
+            font-size: 3rem;
+            font-stretch: expanded;
+            text-align: center;
+            width: 100%;
+            letter-spacing: 0.3em; /* Adjust the value as needed */
+            margin: 0 auto; /* Center horizontally */
         }
 
         section {
@@ -86,7 +131,7 @@
         main {
             padding: 2rem;
             text-align: center;
-            position: relative; /* Ensure content is above the video */
+            position: relative;
             z-index: 1;
         }
 
@@ -101,7 +146,7 @@
     </video>
 
     <header>
-        <h1>Horizon 24-25</h1>
+        <h1>Horizon 2024</h1>
         <div class="nav-container">
             <nav>
                 <a href="index.html">Home</a>
@@ -122,11 +167,9 @@
     
     <main>
         <!-- Section 1: Logo and Info -->
-        <div style="margin-bottom: 2rem;" id="main"> <!-- Added margin-bottom to create space -->
-            <img src="horizon logo WHITE.png" alt="College Logo" 
-                style="width: 150px; height: auto; display: block; margin: 0 auto; margin-bottom: 2.5rem;
-                        filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 20px #ffffff)">
-            <p style="color: white; margin-bottom: 1rem;">Horizon Fest is an annual tech event by the CS-IT Department of Kirti M. Doongursee College, established in 2002. Inspired by the motto “Unity is Strength,” it unites students through technology with events like Conexa, a networking platform, and coding competitions. Horizon fosters creativity, innovation, and collaboration, making it a must-attend for tech enthusiasts.</p>
+        <div id="main" class="moblay" style="margin-bottom: 1rem;"> 
+            <img src="horizon logo WHITE.png" alt="College Logo"></img>
+            <h1 class="horizon" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">HORIZON</h1>
         </div>
         
             <div class="countdown-container">
@@ -154,14 +197,14 @@
                 <img src="college logo.png" alt="College Logo" style="width: 50%; height: 50%; border-radius: 10px;">
                 <!-- <img src="college-picture.jpg" alt="College Picture" style="width: 100%; height: auto; border-radius: 10px; margin-top: 20px;"> -->
             </section>
-            <section class="section-right">
+            <section class="section-right" style="text-size-adjust: 30px;">
                 <h2>About Our College</h2>
                 <p>Kirti M. Doongursee College, located in Dadar West, is a vibrant educational institution known for its commitment to academic excellence. With a rich history and a focus on holistic development, the college offers a diverse range of courses. The campus provides a conducive environment for learning, supported by dedicated faculty and modern facilities. Emphasizing both academic and extracurricular activities, Kirti M. Doongursee College nurtures well-rounded individuals, preparing them for success in their chosen fields.</p>
             </section>
         </div>
 
         <!-- Section 3: Partners (Investors) -->
-        <div style="margin-bottom: 2rem;" id="main">
+        <div style="margin-bottom: 2rem;" id="main" style> <i class="fas fa-sticky-note    "></i>
             <h2>Our Partners</h2>
             <img src="partner1-logo.png" alt="Partner 1" style="width: 100px; margin: 10px;">
             <img src="partner2-logo.png" alt="Partner 2" style="width: 100px; margin: 10px;">
