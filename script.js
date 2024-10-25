@@ -1,7 +1,7 @@
 // Toggle the mobile menu
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'flex' : 'none';
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
 }
 
 // Set the target date and time for the countdown
