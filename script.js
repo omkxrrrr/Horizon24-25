@@ -5,7 +5,7 @@ function toggleMenu() {
 }
 
 // Set the target date and time for the countdown
-const targetDate = new Date("Dec 9, 2024 23:59:59").getTime();
+const targetDate = new Date("Dec 9, 2025 23:59:59").getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
